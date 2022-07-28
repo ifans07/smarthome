@@ -55,7 +55,14 @@
     </div>
 
     
-
+    <script>
+        window.addEventListener('online', function(){
+            console.log('online')
+        })
+        window.addEventListener('offline', function(){
+            console.log('offline')
+        })
+    </script>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script>
         $(document).ready(function(){
@@ -78,7 +85,7 @@
       });
   </script>
     <script>
-
+        alert(sessionStorage.getItem('alert'))
         // Login System Logic
         function Login() {
             var done = 0;
@@ -86,14 +93,17 @@
             username = username.toLowerCase();
             var password = document.login.password.value;
             password = password.toLowerCase();
+
             if (username == "admin" && password == "admin") {
+                sessionStorage.setItem('name', 'admin');
+                console.log(sessionStorage.getItem('name'))
+                localStorage.setItem('name', 'Ifan Sutiono')
                 window.location.href = "beranda.html";
             } else
                 if (done == 0) {
                     alert("Username/Password yang anda masukan salah!");
                 }
         }
-
 
         // Javascript Template 
         const body = document.querySelector("body");

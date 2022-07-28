@@ -165,7 +165,14 @@
         <!-- Right -->
         <ul class="navbar-nav nav-flex-icons">
           <li class="nav-item">
-            <a onclick="return confirm('Yakin ingin keluar?')" href="index.html" class="nav-link border border-light rounded">
+            <a href="#" >
+              <span id="alert" class="nav-link border border-light rounded">
+                
+              </span> 
+            </a>
+          </li>
+          <li class="nav-item">
+            <a onclick="logout()" class="nav-link border border-light rounded">
               <i class="fas fa-power-off mr-2"></i>Logoout
             </a>
           </li>
@@ -356,7 +363,7 @@
             <h1 class="mb-3">Sensor Gas (MQ-2)</h2>
             <div class="row">
               <div class="col-md-12 mb-3">
-                <div class="card">
+                <div class="card bg-primary">
                   <div class="card-body">
                     <div class="card-title">
                       <h4>Gas LPG</h4>
@@ -614,6 +621,42 @@
   <!-- SCRIPTS -->
   <!-- JQuery -->
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script>
+    setInterval(function(){
+      if(localStorage.getItem('name') !== null){
+        
+      }else{
+        sessionStorage.setItem('alert', 'Anda belum login! Login dulu bos!');
+        window.location.href = "index.html";
+      }
+    }, 500)
+  </script>
+  <script>
+    function logout(){
+      localStorage.clear();
+      window.location.href = "index.html";
+    }
+  </script>
+  <script>
+    $(document).ready(function(){
+      setInterval(function(){
+        $.getJSON('https://blynk.cloud/external/api/isHardwareConnected?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7', function(data){
+          console.log(data)
+            if(data == true){
+              data = "Active";
+              $('#alert').html(`
+                <i class="fas fa-check text-success"></i><span class="text-success">`+ data +`</span>
+              `);
+            }else{
+              data = "Offline";
+              $('#alert').html(`
+                <i class="fas fa-times text-danger"></li><span class="text-danger">`+ data +`</span>
+              `);
+            }
+          })
+        }, 1000);
+    })
+  </script>
   <script>
       $(document).ready(function(){
           $('#btn-love').on('click', function(){
