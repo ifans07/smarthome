@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,600,700");
 
         * {
+            margin: 0;
+            padding: 0;
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
         }
@@ -8,19 +10,56 @@
         body {
             font-family: "Nunito", sans-serif;
             color: rgba(0, 0, 0, 0.7);
-            background-image: url('images/bg1.jpg');
+            /* background-image: url('images/bg1.jpg');
             background-size: cover;
             background-repeat: no-repeat;
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: rgba(0, 0, 0, 0.8);
+            animation: change 120s infinite ease; */
         }
 
-        .container {
+        @keyframes change {
+            0%{
+              background-image: url('images/bg7.jpg');
+            }
+            10%{
+              background-image: url('images/bg1.jpg');
+            }
+            20%{
+              background-image: url('images/bg2.jpg');
+            }
+            30%{
+              background-image: url('images/bg3.jpg');
+            }
+            40%{
+              background-image: url('images/bg4.jpg');
+            }
+            50%{
+              background-image: url('images/bg5.jpg');
+            }
+            60%{
+              background-image: url('images/bg6.jpg');
+            }
+            70%{
+              background-image: url('images/bg7.jpg');
+            }
+            80%{
+              background-image: url('images/bg8.jpg');
+            }
+            90%{
+              background-image: url('images/bg9.jpg');
+            }
+            100%{
+              background-image: url('images/bg10.jpg');
+            }
+          }
+
+        /* .container {
             height: 100%;
             background-image: url(https://images.unsplash.com/photo-1538137524007-21e48fa42f3f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ac9fa0975bd2ebad7afd906c5a3a15ab&auto=format&fit=crop&w=1834&q=80);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-        }
+        } */
 
         .modal {
             position: fixed;
