@@ -22,44 +22,23 @@
       scroll-behavior: smooth;
     }
     .view{
-      background-image: url('images/bg7.jpg');
+      background-image: url('images/bg1.jpg');
       background-repeat: no-repeat;
       background-size: cover;
       animation: change 120s infinite ease;
     }
     @keyframes change {
-      0%{
-        background-image: url('images/bg7.jpg');
-      }
-      10%{
-        background-image: url('images/bg1.jpg');
-      }
-      20%{
+      25%{
         background-image: url('images/bg2.jpg');
       }
-      30%{
+      50%{
         background-image: url('images/bg3.jpg');
       }
-      40%{
+      75%{
         background-image: url('images/bg4.jpg');
       }
-      50%{
-        background-image: url('images/bg5.jpg');
-      }
-      60%{
-        background-image: url('images/bg6.jpg');
-      }
-      70%{
-        background-image: url('images/bg7.jpg');
-      }
-      80%{
-        background-image: url('images/bg8.jpg');
-      }
-      90%{
-        background-image: url('images/bg9.jpg');
-      }
       100%{
-        background-image: url('images/bg10.jpg');
+        background-image: url('images/bg5.jpg');
       }
     }
     @media (min-width: 800px) and (max-width: 850px) {
@@ -286,11 +265,10 @@
                 <div class="card-title">
                   <h6 class="text-center">Ruang Tamu</h6>
                 </div>
-                <div class="d-flex justify-content-center mb-2">
-                  <!-- <input type="hidden" id="off" value="1">
-                  <input type="hidden" id="on" value="0">
-                  <button class="btn btn-md btn-danger mb-1" value="1" id="lamp-off" style="text-transform: uppercase;"><i class="fas fa-power-off"></i> off</button> -->
-                  <button class="btn rounded d-flex justify-content-center" value="0" id="living-room" style="height: 90px; width: 90px; margin: auto 0;"><i class="fas fa-lightbulb" style="font-size: 40px; margin-top: 10px;"></i></button>
+                <div class="d-flex justify-content-center mb-2">                  
+                  <button class="btn rounded d-flex justify-content-center" value="0" id="living-room" style="height: 90px; width: 90px; margin: auto 0;">
+                    <i class="fas fa-lightbulb" style="font-size: 40px; margin-top: 10px;"></i>
+                  </button>
                 </div>
                 <div class="alert-living d-flex justify-content-center">
 
@@ -306,10 +284,9 @@
                   <h6 class="text-center">Kamar</h6>
                 </div>
                 <div class="d-flex justify-content-center mb-2">
-                  <!-- <input type="hidden" id="off" value="1">
-                  <input type="hidden" id="on" value="0">
-                  <button class="btn btn-md btn-danger mb-1" value="1" id="lamp-off" style="text-transform: uppercase;"><i class="fas fa-power-off"></i> off</button> -->
-                  <button class="btn rounded d-flex justify-content-center" value="0" id="my-room" style="height: 90px; width: 90px; margin: auto 0;"><i class="fas fa-lightbulb" style="font-size: 40px; margin-top: 10px;"></i></button>
+                  <button class="btn rounded d-flex justify-content-center" value="0" id="my-room" style="height: 90px; width: 90px; margin: auto 0;">
+                    <i class="fas fa-lightbulb" style="font-size: 40px; margin-top: 10px;"></i>
+                  </button>
                 </div>
                 <div class="alert-my d-flex justify-content-center">
 
@@ -325,10 +302,9 @@
                   <h6 class="text-center">Dapur</h6>
                 </div>
                 <div class="d-flex justify-content-center mb-2">
-                  <!-- <input type="hidden" id="off" value="1">
-                  <input type="hidden" id="on" value="0">
-                  <button class="btn btn-md btn-danger mb-1" value="1" id="kitchen-room-off" style="text-transform: uppercase;"><i class="fas fa-power-off"></i> off</button> -->
-                  <button class="btn rounded d-flex justify-content-center" value="0" id="kitchen-room-on" style="height: 90px; width: 90px; margin: auto 0;"><i class="fas fa-lightbulb" style="font-size: 40px; margin-top: 10px;"></i></button>
+                  <button class="btn rounded d-flex justify-content-center" value="0" id="kitchen-room-on" style="height: 90px; width: 90px; margin: auto 0;">
+                    <i class="fas fa-lightbulb" style="font-size: 40px; margin-top: 10px;"></i>
+                  </button>
                 </div>
                 <div class="alert-kitchen d-flex justify-content-center">
 
@@ -344,10 +320,9 @@
                   <h6 class="text-center">Kipas Angin</h6>
                 </div>
                 <div class="d-flex justify-content-center mb-2">
-                  <!-- <input type="hidden" id="off" value="1">
-                  <input type="hidden" id="on" value="0">
-                  <button class="btn btn-md btn-danger mb-1" value="1" id="kitchen-room-off" style="text-transform: uppercase;"><i class="fas fa-power-off"></i> off</button> -->
-                  <button class="btn rounded d-flex justify-content-center" value="0" id="fan-on" style="height: 90px; width: 90px; margin: auto 0;"><i class="fas fa-lightbulb" style="font-size: 40px; margin-top: 10px;"></i></button>
+                  <button class="btn rounded d-flex justify-content-center" value="0" id="fan-on" style="height: 90px; width: 90px; margin: auto 0;">
+                    <i class="fas fa-lightbulb" style="font-size: 40px; margin-top: 10px;"></i>
+                  </button>
                 </div>
                 <div class="alert-fan d-flex justify-content-center">
 
@@ -363,10 +338,9 @@
                   <h6 class="text-center">Semua Devices</h6>
                 </div>
                 <div class="d-flex justify-content-center mb-2">
-                  <!-- <input type="hidden" id="off" value="1">
-                  <input type="hidden" id="on" value="0">
-                  <button class="btn btn-md btn-danger mb-1" value="1" id="lamp-off" style="text-transform: uppercase;"><i class="fas fa-power-off"></i> off</button> -->
-                  <button class="btn rounded d-flex justify-content-center" value="0" id="all-room" style="height: 90px; width: 90px; margin: auto 0;"><i class="fas fa-lightbulb" style="font-size: 40px; margin-top: 10px;"></i></button>
+                  <button class="btn rounded d-flex justify-content-center" value="0" id="all-room" style="height: 90px; width: 90px; margin: auto 0;">
+                    <i class="fas fa-lightbulb" style="font-size: 40px; margin-top: 10px;"></i>
+                  </button>
                 </div>
                 <div class="alert-all d-flex justify-content-center">
 
@@ -376,7 +350,6 @@
           </div>
         </div>
         <!--Grid row-->
-
       </section>
       <!--Section: Main info-->
 
@@ -511,39 +484,8 @@
       </section>
       <!--Section: Main features & Quick Start-->
 
-      <!-- <hr class="my-5"> -->
-
-      <!--Section: Not enough-->
-      <!-- <section>
-        <div class="row wow fadeIn">
-          <div class="col-md-12 col-md-6 mb-4"> -->
-
-          <!--Card-->
-          <!-- <div class="card"> -->
-
-            <!-- Card header -->
-            <!-- <div class="card-header">Line chart</div> -->
-
-            <!--Card content-->
-            <!-- <div class="card-body">
-
-              <canvas id="lineChart"></canvas>
-
-            </div>
-
-          </div> -->
-          <!--/.Card-->
-
-        <!-- </div>
-        </div>
-      </section> -->
-      <!--Section: Not enough-->
 
       <hr class="mb-5">
-
-      <!--Section: More-->
-      
-      <!--Section: More-->
 
     </div>
   </main>
@@ -613,6 +555,8 @@
     
     console.log(sessionStorage.getItem('nama'))
   </script>
+
+  <!-- auth login -->
   <script>
     setInterval(function(){
       if(localStorage.getItem('name') !== null){
@@ -629,6 +573,8 @@
       window.location.href = "index.html";
     }
   </script>
+
+<!-- cek perangkat online -->
   <script>
     $(document).ready(function(){
       setInterval(function(){
@@ -932,116 +878,120 @@
     })
   </script>
 
-  <!-- pembacaan sensor -->
+  <!-- pembacaan sensor suhu (humidity, celcius, fahrenheit) -->
   <script>
     $(document).ready(function(){
       setInterval(function(){
-                    $.getJSON('https://blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V0', function(data){
-                      //console.log(data);
-                      $('#humidity').html('<span>' + data + '%</span>')
-                    })
+        $.getJSON('https://blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V0', function(data){
+          //console.log(data);
+          $('#humidity').html('<span>' + data + '%</span>')
+        })
 
-                    $.getJSON('https://blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V1', function(data){
-                      // console.log(data);
-                      let alert = '';
-                      let simbol = '';
-                      if(data > 30){
-                        alert = 'text-danger';
-                        simbol = 'fas fa-temperature-high';
-                      }else{
-                        alert = '';
-                        simbol = 'fas fa-temperature-low';
-                      }
-                      $('#alert-celcius').html('<i class="'+simbol+' '+alert+'" style="font-size: 60px;"></i>');
-                      $('#cel').html('<span>' + data + '&#8451;</span>')
-                    })
+        $.getJSON('https://blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V1', function(data){
+          // console.log(data);
+          let alert = '';
+          let simbol = '';
+          if(data > 30){
+            alert = 'text-danger';
+            simbol = 'fas fa-temperature-high';
+          }else{
+            alert = '';
+            simbol = 'fas fa-temperature-low';
+          }
+          $('#alert-celcius').html('<i class="'+simbol+' '+alert+'" style="font-size: 60px;"></i>');
+          $('#cel').html('<span>' + data + '&#8451;</span>')
+        })
 
-                    $.getJSON('https://blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V11', function(data){
-                      // console.log(data);
-                      $('#fahrenheit').html('<span>' + data + '&#8457;</span>')
-                    })
+        $.getJSON('https://blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V11', function(data){
+          // console.log(data);
+          $('#fahrenheit').html('<span>' + data + '&#8457;</span>')
+        })
 
-                    $.getJSON('https://blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V0', function(data){
-                      // console.log(data);
-                      $('#heat-humidity').html('<span>' + data + '%</span>')
-                    })
+        $.getJSON('https://blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V0', function(data){
+          // console.log(data);
+          $('#heat-humidity').html('<span>' + data + '%</span>')
+        })
       }, 1000)
     })
-                </script>
-                <script>
-                  setInterval(function(){
-                    $.getJSON('https://sgp1.blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V13', function(data){
-                      // console.log(data);
-                      let alert = '';
-                      if(data > 2000){
-                        alert = "text-danger";
-                      }else{
-                        alert = '';
-                      }
-                      $('#lpg').html('<span class="'+alert+'">' + data + 'mg</span>')
-                    })
+    </script>
 
-                    $.getJSON('https://sgp1.blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V1', function(data){
-                      // console.log(data);
-                      let alert = '';
-                      if(data > 30){
-                        alert = "text-danger";
-                      }else if(data > 10 && data < 26){
-                        alert = "text-primary";
-                      }else{
-                        alert = '';
-                      }
-                      alert;
-                      $('#temperature-celcius').html('<span class="'+ alert +'">' + data + '&#8451;</span>')
-                    })
-                  }, 1000)
+    <!-- pembacaan sensor suhu (temperature) dan gas (lpg) -->
+    <script>
+      setInterval(function(){
+        $.getJSON('https://sgp1.blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V13', function(data){
+          // console.log(data);
+          let alert = '';
+          if(data > 2000){
+            alert = "text-danger";
+          }else{
+            alert = '';
+          }
+          $('#lpg').html('<span class="'+alert+'">' + data + 'mg</span>')
+        })
 
-                  setInterval(function(){
-                    
-                  }, 1000)
-                </script>
-                <script>
+        $.getJSON('https://sgp1.blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V1', function(data){
+          // console.log(data);
+          let alert = '';
+          if(data > 30){
+            alert = "text-danger";
+          }else if(data > 10 && data < 26){
+            alert = "text-primary";
+          }else{
+            alert = '';
+          }
+          alert;
+          $('#temperature-celcius').html('<span class="'+ alert +'">' + data + '&#8451;</span>')
+        })
+      }, 1000)
+    </script>
+
+    <!-- pembacaan sensor gas (lpg) -->
+    <script>
     $(document).ready(function(){
       setInterval(function(){
-                    $.getJSON('https://sgp1.blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V13', function(data){
-                      // console.log(data);
-                      let alert = '';
-                      if(data > 2000 ){
-                        alert = "text-danger";
-                      }else{
-                        alert = ''
-                      }
-                      $('#gas-lpg').html('<span class="'+alert+'">' + data + 'mg</span>')
-                    })
+        $.getJSON('https://sgp1.blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V13', function(data){
+          // console.log(data);
+          let alert = '';
+          if(data > 2000 ){
+            alert = "text-danger";
+          }else{
+            alert = ''
+          }
+          $('#gas-lpg').html('<span class="'+alert+'">' + data + 'mg</span>')
+        })
       }, 1000)
     })
-                </script>
-                <script>
+    </script>
+
+    <!-- pembacaan sensor gas (co) -->
+    <script>
     $(document).ready(function(){
       setInterval(function(){
-                    $.getJSON('https://sgp1.blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V14', function(data){
-                      // console.log(data);
-                      let alert = '';
-                      if(data > 5000 ){
-                        alert = "text-danger";
-                      }else{
-                        alert = ''
-                      }
-                      $('#gas-co').html('<span class="'+alert+'">' + data + 'mg</span>')
-                    })
+        $.getJSON('https://sgp1.blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V14', function(data){
+          // console.log(data);
+          let alert = '';
+          if(data > 5000 ){
+            alert = "text-danger";
+          }else{
+            alert = ''
+          }
+          $('#gas-co').html('<span class="'+alert+'">' + data + 'mg</span>')
+        })
       }, 1000)
     })
-                </script>
-                <script>
+    </script>
+
+    <!-- pembacaan sensor gas (asap) -->
+    <script>
     $(document).ready(function(){
       setInterval(function(){
-                    $.getJSON('https://sgp1.blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V15', function(data){
-                      // console.log(data);
-                      $('#gas-smoke').html('<span>' + data + 'mg</span>')
-                    })
+        $.getJSON('https://sgp1.blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V15', function(data){
+          // console.log(data);
+          $('#gas-smoke').html('<span>' + data + 'mg</span>')
+        })
       }, 1000)
     })
-                </script>
+  </script>
   <!-- Bootstrap tooltips -->
   <script type="text/javascript" src="js/popper.min.js"></script>
   <!-- Bootstrap core JavaScript -->
