@@ -695,6 +695,32 @@
       })
     })
   </script>
+  <script>
+    $(document).ready(function(){
+      setInterval(function(){
+        $.getJSON('https://blynk.cloud/external/api/isHardwareConnected?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7', function(online){
+          if(online == true){
+              $.getJSON('https://sgp1.blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V8', function(data){
+                  if(data == '1'){
+                  $('.alert-kitchen').html(`
+                  <span class="alert alert-danger" style="font-size: 10px;">Lampu Dimatikan</span>
+                  `);
+                  $('#kitchen-room-on').removeClass('btn-success');
+                  $('#kitchen-room-on').addClass('btn-danger');
+                }else{
+                  $('.alert-kitchen').html(`
+                    <span class="alert alert-success" style="font-size: 10px;">Lampu Dinyalakan</span>
+                  `);
+                  $('#kitchen-room-on').removeClass('btn-danger');
+                  $('#kitchen-room-on').addClass('btn-success');
+                  $('#kitchen-room-on').css('background-color','green');
+                }
+              })
+          }
+        })
+      }, 1000)
+    })
+  </script>
 
   <!-- living room -->
   <script>
@@ -728,6 +754,32 @@
       })
     })
   </script>
+  <script>
+    $(document).ready(function(){
+      setInterval(function(){
+        $.getJSON('https://blynk.cloud/external/api/isHardwareConnected?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7', function(online){
+          if(online == true){
+              $.getJSON('https://sgp1.blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V7', function(data){
+                  if(data == '1'){
+                  $('.alert-living').html(`
+                  <span class="alert alert-danger" style="font-size: 10px;">Lampu Dimatikan</span>
+                  `);
+                  $('#living-room').removeClass('btn-success');
+                  $('#living-room').addClass('btn-danger');
+                }else{
+                  $('.alert-living').html(`
+                    <span class="alert alert-success" style="font-size: 10px;">Lampu Dinyalakan</span>
+                  `);
+                  $('#living-room').removeClass('btn-danger');
+                  $('#living-room').addClass('btn-success');
+                  $('#living-room').css('background-color','green');
+                }
+              })
+          }
+        })
+      }, 1000)
+    })
+  </script>
 
   <!-- my room -->
   <script>
@@ -759,6 +811,32 @@
 
         })
       })
+    })
+  </script>
+  <script>
+    $(document).ready(function(){
+      setInterval(function(){
+        $.getJSON('https://blynk.cloud/external/api/isHardwareConnected?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7', function(online){
+          if(online == true){
+              $.getJSON('https://sgp1.blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V9', function(data){
+                  if(data == '1'){
+                  $('.alert-my').html(`
+                  <span class="alert alert-danger" style="font-size: 10px;">Lampu Dimatikan</span>
+                  `);
+                  $('#my-room').removeClass('btn-success');
+                  $('#my-room').addClass('btn-danger');
+                }else{
+                  $('.alert-my').html(`
+                    <span class="alert alert-success" style="font-size: 10px;">Lampu Dinyalakan</span>
+                  `);
+                  $('#my-room').removeClass('btn-danger');
+                  $('#my-room').addClass('btn-success');
+                  $('#my-room').css('background-color','green');
+                }
+              })
+          }
+        })
+      }, 1000)
     })
   </script>
 
@@ -827,6 +905,32 @@
       })
     })
   </script>
+  <script>
+    $(document).ready(function(){
+      setInterval(function(){
+        $.getJSON('https://blynk.cloud/external/api/isHardwareConnected?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7', function(online){
+          if(online == true){
+              $.getJSON('https://sgp1.blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V10', function(data){
+                  if(data == '1'){
+                  $('.alert-fan').html(`
+                  <span class="alert alert-danger" style="font-size: 10px;">Lampu Dimatikan</span>
+                  `);
+                  $('#fan-on').removeClass('btn-success');
+                  $('#fan-on').addClass('btn-danger');
+                }else{
+                  $('.alert-fan').html(`
+                    <span class="alert alert-success" style="font-size: 10px;">Lampu Dinyalakan</span>
+                  `);
+                  $('#fan-on').removeClass('btn-danger');
+                  $('#fan-on').addClass('btn-success');
+                  $('#fan-on').css('background-color','green');
+                }
+              })
+          }
+        })
+      }, 1000)
+    })
+  </script>
 
   <!-- pembacaan sensor -->
   <script>
@@ -866,7 +970,7 @@
                 </script>
                 <script>
                   setInterval(function(){
-                    $.getJSON('https://blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V13', function(data){
+                    $.getJSON('https://sgp1.blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V13', function(data){
                       // console.log(data);
                       let alert = '';
                       if(data > 2000){
@@ -877,7 +981,7 @@
                       $('#lpg').html('<span class="'+alert+'">' + data + 'mg</span>')
                     })
 
-                    $.getJSON('https://blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V1', function(data){
+                    $.getJSON('https://sgp1.blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V1', function(data){
                       // console.log(data);
                       let alert = '';
                       if(data > 30){
@@ -899,7 +1003,7 @@
                 <script>
     $(document).ready(function(){
       setInterval(function(){
-                    $.getJSON('https://blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V13', function(data){
+                    $.getJSON('https://sgp1.blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V13', function(data){
                       // console.log(data);
                       let alert = '';
                       if(data > 2000 ){
@@ -915,7 +1019,7 @@
                 <script>
     $(document).ready(function(){
       setInterval(function(){
-                    $.getJSON('https://blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V14', function(data){
+                    $.getJSON('https://sgp1.blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V14', function(data){
                       // console.log(data);
                       let alert = '';
                       if(data > 5000 ){
@@ -931,7 +1035,7 @@
                 <script>
     $(document).ready(function(){
       setInterval(function(){
-                    $.getJSON('https://blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V15', function(data){
+                    $.getJSON('https://sgp1.blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V15', function(data){
                       // console.log(data);
                       $('#gas-smoke').html('<span>' + data + 'mg</span>')
                     })
@@ -970,20 +1074,6 @@
       }, 1000)
     })
   </script> -->
-  <script>
-    $(document).ready(function(){
-      setInterval(function(){
-        $("#celcius").load('celcius.php');
-      }, 1000)
-    });
-  </script>
-  <script>
-    $(document).ready(function(){
-      setInterval(function(){
-        $("#smoke").load('smoke.php');
-      }, 1000)
-    });
-  </script>
   
   <script>
       window.onload = function() { jam(); }
