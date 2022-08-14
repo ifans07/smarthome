@@ -382,6 +382,9 @@
                         <p class="font-weight-bold" style="font-size: 42px" id="gas-lpg"></p>   
                       </div>
                     </div>
+                    <div class="notif-lpg">
+                        <span class="alert alert-danger"></span>
+                      </div>
                   </div>
                 </div>
               </div>
@@ -401,6 +404,9 @@
                         <p class="font-weight-bold" style="font-size: 42px" id="gas-co"></p>   
                       </div>
                     </div>
+                    <div class="notif-co">
+                        <span class="alert alert-danger"></span>
+                      </div>
                   </div>
                 </div>
               </div>
@@ -420,6 +426,9 @@
                         <p class="font-weight-bold" style="font-size: 42px" id="gas-smoke"></p>   
                       </div>
                     </div>
+                    <div class="notif-smoke">
+                        <span class="alert alert-danger"></span>
+                      </div>
                   </div>
                 </div>
               </div>
@@ -446,6 +455,9 @@
                         <p class="font-weight-bold" style="font-size: 42px" id="cel"></p>   
                       </div>
                     </div>
+                      <div class="notif-celcius">
+                        <span class="alert alert-danger"></span>
+                      </div>
                   </div>
                 </div>
               </div>
@@ -465,6 +477,9 @@
                         <p class="font-weight-bold" style="font-size: 42px" id="fahrenheit"></p>   
                       </div>
                     </div>
+                    <div class="notif-f">
+                        <span class="alert alert-danger"></span>
+                      </div>
                   </div>
                 </div>
               </div>
@@ -484,6 +499,9 @@
                         <p class="font-weight-bold" style="font-size: 42px" id="heat-humidity"></p>   
                       </div>
                     </div>
+                    <div class="notif-humidity">
+                        <span class="alert alert-danger"></span>
+                      </div>
                   </div>
                 </div>
               </div>
@@ -896,6 +914,7 @@
           $('#humidity').html('<span>' + data + '%</span>')
         })
 
+        // celcius
         $.getJSON('https://blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V1', function(data){
           // console.log(data);
           let alert = '';
@@ -903,21 +922,73 @@
           if(data > 30){
             alert = 'text-danger';
             simbol = 'fas fa-temperature-high';
+            $('.notif-celcius').html(`
+                <span class="alert alert-danger">Suhu ruangan berlebih</span>
+              `)
+          }else if(data > 20 && data < 25){
+            alert = '';
+            simbol = 'fas fa-temperature-low';
+            $('.notif-celcius').html(`
+                <span class="alert alert-success">Suhu ruangan ideal</span>
+              `)
+          }else if(data > 25 && data < 30){
+            alert = '';
+            simbol = 'fas fa-temperature-high';
+            $('.notif-celcius').html(`
+                <span class="alert alert-warning">Suhu ruangan wajar</span>
+              `)
           }else{
             alert = '';
             simbol = 'fas fa-temperature-low';
+            $('.notif-celcius').html(`
+                
+              `)
           }
           $('#alert-celcius').html('<i class="'+simbol+' '+alert+'" style="font-size: 60px;"></i>');
-          $('#cel').html('<span>' + data + '&#8451;</span>')
+          $('#cel').html('<span class="'+alert+'">' + data + '&#8451;</span>')
         })
 
         $.getJSON('https://blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V11', function(data){
           // console.log(data);
+          if(data < 68){
+            $('.notif-f').html(`
+              <span class="alert alert-warning">Suhu ruangan kurang</span>
+              `)
+          }else if(data > 68 && data < 78){
+            $('.notif-f').html(`
+              <span class="alert alert-success">Suhu ruangan normal/ ideal</span>
+              `)
+          }else if(data > 78){
+            $('.notif-f').html(`
+              <span class="alert alert-danger">Suhu ruangan berlebih</span>
+              `)
+          }else{
+            $('.notif-f').html(`
+              
+              `)
+          }
           $('#fahrenheit').html('<span>' + data + '&#8457;</span>')
         })
 
         $.getJSON('https://blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V0', function(data){
           // console.log(data);
+          if(data < 45){
+            $('.notif-humidity').html(`
+                <span class="alert alert-warning">Kelembapan Kurang</span>
+              `)
+          }else if(data >= 45 && data <= 65){
+            $('.notif-humidity').html(`
+                <span class="alert alert-success">Kelembapan Normal/ Ideal</span>
+              `)
+          }else if(data > 65){
+            $('.notif-humidity').html(`
+                <span class="alert alert-warning">Kelembapan Berlebih</span>
+              `)
+          }else{
+            $('.notif-humidity').html(`
+                <span class="alert alert-warning">Kelembapan Kurang</span>
+              `)
+          }
           $('#heat-humidity').html('<span>' + data + '%</span>')
         })
       }, 1000)
@@ -963,8 +1034,24 @@
           let alert = '';
           if(data > 2000 ){
             alert = "text-danger";
-          }else{
+            $('.notif-lpg').html(`
+              <span class="alert alert-danger">Berbahaya!!! gas LPG terdeteksi semakin banyak</span>
+              `)
+          }else if(data > 500 && data < 2000){
             alert = ''
+            $('.notif-lpg').html(`
+              <span class="alert alert-warning">Terdeteksi kebocoran gas LPG</span>
+              `)
+          }else if(data < 500){
+            alert = '';
+            $('.notif-lpg').html(`
+              <span class="alert alert-success">Udara aman</span>
+              `)
+          }else{
+            alert = '';
+            $('.notif-lpg').html(`
+              
+              `)
           }
           $('#gas-lpg').html('<span class="'+alert+'">' + data + 'mg</span>')
         })
@@ -979,10 +1066,26 @@
         $.getJSON('https://sgp1.blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V14', function(data){
           // console.log(data);
           let alert = '';
-          if(data > 5000 ){
+          if(data > 10000 ){
             alert = "text-danger";
-          }else{
+            $('.notif-co').html(`
+              <span class="alert alert-danger">Berbahaya!!! Gas CO semakin pekat</span>
+              `)
+          }else if(data > 5000 && data < 10000){
             alert = ''
+            $('.notif-co').html(`
+              <span class="alert alert-warning">Gas CO Terdeteksi</span>
+              `)
+          }else if(data < 5000){
+            alert = '';
+            $('.notif-co').html(`
+              <span class="alert alert-success">Udara aman</span>
+              `)
+          }else{
+            alert = '';
+            $('.notif-co').html(`
+              
+              `)
           }
           $('#gas-co').html('<span class="'+alert+'">' + data + 'mg</span>')
         })
@@ -996,6 +1099,23 @@
       setInterval(function(){
         $.getJSON('https://sgp1.blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V15', function(data){
           // console.log(data);
+          if(data > 5000){
+            $('.notif-smoke').html(`
+              <span class="alert alert-danger">Berbahaya!!! Asap semakin pekat</span>
+              `)
+          }else if(data > 1000 && data < 5000){
+            $('.notif-smoke').html(`
+              <span class="alert alert-warning">Asap terdeteksi</span>
+              `)
+          }else if(data < 1000){
+            $('.notif-smoke').html(`
+              <span class="alert alert-success">Udara aman</span>
+              `)
+          }else{
+            $('.notif-lpg').html(`
+              
+              `)
+          }
           $('#gas-smoke').html('<span>' + data + 'mg</span>')
         })
       }, 1000)
