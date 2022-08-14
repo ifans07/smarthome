@@ -200,22 +200,22 @@
                 <strong class="form-text"><?php echo date('d-m-Y') ?></strong>
               </h1>
 
-              <div class="row d-flex justify-content-around mb-5">
+              <div class="row d-flex justify-content-center mb-5">
 
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
-                  <i class="fas fa-temperature-low"></i>
+                  <i class="fas fa-temperature-low d-block mb-1"></i>
                   <strong id="temperature-celcius"></strong>                   
                 </div>
                   
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
                   <!-- <i class="fas fa-temperature-low"></i> -->
-                  <img src="icon/gas-white.svg" width="20" class="d-inline-block" height="20" alt="">
+                  <img src="icon/gas-white.svg" width="20" height="20" alt="" style="margin: 0 auto;">
                   <strong id="lpg"></strong>
                 </div>
                 
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
                   <!-- <i class="fas fa-temperature-high"></i> -->
-                  <img src="icon/humidity-white.svg" width="20" class="d-inline-block" height="20" alt="">
+                  <img src="icon/humidity-white.svg" width="20" height="20" alt="" style="margin: 0 auto">
                   <strong id="humidity"></strong>
                 </div>
                 
@@ -373,7 +373,7 @@
                     <div class="card-title">
                       <h6>Gas LPG</h6>
                     </div>
-                    <div class="d-flex justify-content-around">
+                    <div class="d-flex justify-content-around mb-2">
                       <div>
                         <!-- <i class="fas fa-burn" style="font-size: 60px;"></i> -->
                         <img src="icon/gas.svg" width="60" height="60" alt="">
@@ -382,7 +382,7 @@
                         <p class="font-weight-bold" style="font-size: 42px" id="gas-lpg"></p>   
                       </div>
                     </div>
-                    <div class="notif-lpg">
+                    <div class="notif-lpg" style="font-size: 14px;">
                         <span class="alert alert-danger"></span>
                       </div>
                   </div>
@@ -395,7 +395,7 @@
                     <div class="card-title">
                       <h6>Gas CO</h6>
                     </div>
-                    <div class="d-flex justify-content-around">
+                    <div class="d-flex justify-content-around mb-2">
                       <div>
                         <!-- <i class="fas fa-burn" style="font-size: 60px;"></i> -->
                         <img src="icon/co.svg" width="60" height="60" alt="">
@@ -404,7 +404,7 @@
                         <p class="font-weight-bold" style="font-size: 42px" id="gas-co"></p>   
                       </div>
                     </div>
-                    <div class="notif-co">
+                    <div class="notif-co" style="font-size: 14px;">
                         <span class="alert alert-danger"></span>
                       </div>
                   </div>
@@ -417,7 +417,7 @@
                     <div class="card-title">
                       <h6>Asap</h6>
                     </div>
-                    <div class="d-flex justify-content-around">
+                    <div class="d-flex justify-content-around mb-2">
                       <div>
                         <!-- <i class="fas fa-burn" style="font-size: 60px;"></i> -->
                         <img src="icon/smoke.svg" width="60" height="60" alt="">
@@ -426,7 +426,7 @@
                         <p class="font-weight-bold" style="font-size: 42px" id="gas-smoke"></p>   
                       </div>
                     </div>
-                    <div class="notif-smoke">
+                    <div class="notif-smoke" style="font-size: 14px;">
                         <span class="alert alert-danger"></span>
                       </div>
                   </div>
@@ -447,7 +447,7 @@
                     <div class="card-title">
                       <h6>Derajat Celcius</h6>
                     </div>
-                    <div class="d-flex justify-content-around">
+                    <div class="d-flex justify-content-around mb-2">
                       <div id="alert-celcius">
                         <!-- <i class="fas fa-temperature-low" style="font-size: 60px;"></i> -->
                       </div>
@@ -455,7 +455,7 @@
                         <p class="font-weight-bold" style="font-size: 42px" id="cel"></p>   
                       </div>
                     </div>
-                      <div class="notif-celcius">
+                      <div class="notif-celcius" style="font-size: 14px;">
                         <span class="alert alert-danger"></span>
                       </div>
                   </div>
@@ -469,7 +469,7 @@
                     <div class="card-title">
                       <h6>Derajat Fahrenheit</h6>
                     </div>
-                    <div class="d-flex justify-content-around">
+                    <div class="d-flex justify-content-around mb-2">
                       <div>
                         <i class="fas fa-temperature-low" style="font-size: 60px;"></i>
                       </div>
@@ -477,7 +477,7 @@
                         <p class="font-weight-bold" style="font-size: 42px" id="fahrenheit"></p>   
                       </div>
                     </div>
-                    <div class="notif-f">
+                    <div class="notif-f" style="font-size: 14px;">
                         <span class="alert alert-danger"></span>
                       </div>
                   </div>
@@ -490,7 +490,7 @@
                     <div class="card-title">
                       <h6>Kelembapan</h6>
                     </div>
-                    <div class="d-flex justify-content-around">
+                    <div class="d-flex justify-content-around mb-2">
                       <div>
                         
                         <img src="icon/humidity.svg" width="60" height="60" alt="">
@@ -499,7 +499,7 @@
                         <p class="font-weight-bold" style="font-size: 42px" id="heat-humidity"></p>   
                       </div>
                     </div>
-                    <div class="notif-humidity">
+                    <div class="notif-humidity" style="font-size: 14px;">
                         <span class="alert alert-danger"></span>
                       </div>
                   </div>
@@ -1006,7 +1006,7 @@
           }else{
             alert = '';
           }
-          $('#lpg').html('<span class="'+alert+'">' + data + 'mg</span>')
+          $('#lpg').html('<span class="'+alert+'">' + data + 'ppm</span>')
         })
 
         $.getJSON('https://sgp1.blynk.cloud/external/api/get?token=M8r1JtoTj2zF7UwGxDo9FUyBr-4Di7U7&V1', function(data){
@@ -1053,7 +1053,7 @@
               
               `)
           }
-          $('#gas-lpg').html('<span class="'+alert+'">' + data + 'mg</span>')
+          $('#gas-lpg').html('<span class="'+alert+'">' + data + 'ppm</span>')
         })
       }, 1000)
     })
@@ -1087,7 +1087,7 @@
               
               `)
           }
-          $('#gas-co').html('<span class="'+alert+'">' + data + 'mg</span>')
+          $('#gas-co').html('<span class="'+alert+'">' + data + 'ppm</span>')
         })
       }, 1000)
     })
@@ -1116,7 +1116,7 @@
               
               `)
           }
-          $('#gas-smoke').html('<span>' + data + 'mg</span>')
+          $('#gas-smoke').html('<span>' + data + 'ppm</span>')
         })
       }, 1000)
     })
