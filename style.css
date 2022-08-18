@@ -211,12 +211,13 @@
         }
 
         .input-button {
-            padding: 8px 12px;
+            width: 150px;
+            padding: 10px 12px;
             outline: none;
             border: 0;
             color: #fff;
             border-radius: 4px;
-            background: #8c7569;
+            background: #343a40;
             font-family: "Nunito", sans-serif;
             -webkit-transition: 0.3s;
             transition: 0.3s;
@@ -224,7 +225,7 @@
         }
 
         .input-button:hover {
-            background: #55311c;
+            background: #343a44;
         }
 
         .input-label {
