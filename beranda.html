@@ -26,6 +26,8 @@
     html{
       scroll-behavior: smooth;
     }
+    .jam_digital{font-size: 100px;}
+    .tanggal-digital{font-size: 22px;}
     .view{
       background-image: url('images/bg1.jpg');
       background-repeat: no-repeat;
@@ -152,7 +154,14 @@
     width:  11rem;
   }
 }
-
+@media screen and (max-width: 576px) {
+    .jam_digital{
+      font-size: 72px;
+    }
+    .tanggal-digital{
+      font-size: 16px;
+    }
+}
   </style>
   
 </head>
@@ -225,8 +234,8 @@
             <!-- Content -->
             <div class="text-center white-text mx-5 wow fadeIn">
               <h1 class="">
-                <strong class="jam_digital" id="jam_digital" style="font-size: 100px;"></strong> &nbsp;<span style="text-transform: uppercase;"><?= date('a') ?></span>
-                <strong class="form-text"><?php echo date('d-m-Y') ?></strong>
+                <strong class="jam_digital" id="jam_digital"></strong>
+                <p class="tanggal-digital" id="tanggal-digital"></p>
               </h1>
 
               <div class="row d-flex justify-content-center mb-5">
@@ -954,13 +963,13 @@
             $('.notif-celcius').html(`
                 <span class="alert alert-danger">Suhu ruangan berlebih</span>
               `)
-          }else if(data > 20 && data < 25){
+          }else if(data > 20 && data <= 25){
             alert = '';
             simbol = 'fas fa-temperature-low';
             $('.notif-celcius').html(`
                 <span class="alert alert-success">Suhu ruangan ideal</span>
               `)
-          }else if(data > 25 && data < 30){
+          }else if(data > 25 && data <= 30){
             alert = '';
             simbol = 'fas fa-temperature-high';
             $('.notif-celcius').html(`
@@ -983,18 +992,22 @@
             $('.notif-f').html(`
               <span class="alert alert-warning">Suhu ruangan kurang</span>
               `)
-          }else if(data > 68 && data < 78){
+          }else if(data >= 68 && data <= 78){
             $('.notif-f').html(`
               <span class="alert alert-success">Suhu ruangan normal/ ideal</span>
               `)
-          }else if(data > 78){
+          }else if(data > 78 && data <= 83){
+            $('.notif-f').html(`
+              <span class="alert alert-warning">Suhu ruangan wajar</span>
+              `)
+          }else if(data > 83){
             $('.notif-f').html(`
               <span class="alert alert-danger">Suhu ruangan berlebih</span>
               `)
           }else{
             $('.notif-f').html(`
-              
-              `)
+
+              `);
           }
           $('#fahrenheit').html('<span>' + data + '&#8457;</span>')
         })
@@ -1043,7 +1056,7 @@
           let alert = '';
           if(data > 30){
             alert = "text-danger";
-          }else if(data > 10 && data < 26){
+          }else if(data > 10 && data < 20){
             alert = "text-primary";
           }else{
             alert = '';
@@ -1096,7 +1109,7 @@
           // console.log(data);
           let alert = '';
           if(data > 10000 ){
-            alert = "text-danger";
+            alert = "";
             $('.notif-co').html(`
               <span class="alert alert-danger">Berbahaya!!! Gas CO semakin pekat</span>
               `)
@@ -1188,6 +1201,7 @@
       function jam() {
               var e = document.getElementById('jam_digital'),
               d = new Date(), h, m, s;
+
               h = d.getHours();
               m = set(d.getMinutes());
               s = set(d.getSeconds());
@@ -1212,7 +1226,32 @@
             e = e < 10 ? '0'+ e : e;
             return e;
         }
-  </script> 
+  </script>
+
+  <script>
+      window.onload = function() { tanggal(); }
+      function tanggal() {
+              var e = document.getElementById('tanggal-digital'),
+              d = new Date(), h, m, s;
+              const namaHari = ["Minggu","Senin","Selasa","Rabu","Kami","Jumat","Sabtu"];
+              const namaBulan = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","December"];
+              hari = d.getDay();
+              tanggal = d.getDate();
+              bulan = d.getMonth();
+              tahun = d.getFullYear();
+
+              h = d.getHours();
+              m = set(d.getMinutes());
+              s = set(d.getSeconds());
+
+              e.innerHTML = namaHari[hari] + ', ' + tanggal + ' ' + namaBulan[bulan] + ' ' + tahun;
+              setTimeout('jam()', 1000);
+          }
+          function set(e) {
+            e = e < 10 ? '0'+ e : e;
+            return e;
+        }
+  </script>
 <!--   <script>
     $(document).ready(function(){
         var bg=[0,1,2,3,4,5,6,7,8,9];
